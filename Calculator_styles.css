@@ -1,0 +1,165 @@
+﻿/* 设置全屏背景和字体 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', sans-serif;
+    background: linear-gradient(135deg, #ffddc1, #ff88c2);
+    user-select: none;
+    overflow: hidden;
+}
+
+/* 计算器外观 */
+.calculator {
+    width: 400px;
+    background: #ffefba;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .calculator:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    }
+
+/* 显示屏部分 */
+.calculator-display {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+
+
+.display {
+    width: 100%;
+    padding: 20px;
+    font-size: 2.2rem;
+    background-color: #ffd56b;
+    color: #ff006e;
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* 按键部分 */
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* 按钮基础样式 */
+button {
+    padding: 20px;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(140deg, #f0a3b6, #d49ba990); /* 调整为较浅的颜色 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* 添加按钮的花边 */
+button::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #ffc6d1;
+    border-radius: 15px;
+    z-index: -1;
+}
+
+
+    button:active {
+        transform: rotate(15deg) scale(0.95);
+        box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 按钮悬浮效果 */
+    button:hover {
+        transform: scale(1.1);
+        background: linear-gradient(145deg, #ffb3c6, #ffd1b3); /* 悬浮时使用更浅的颜色 */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 运算符按钮 */
+    button[data-action="add"],
+    button[data-action="subtract"],
+    button[data-action="multiply"],
+    button[data-action="divide"],
+    button[data-action="root"],
+    button[data-action="power"] {
+        background: linear-gradient(145deg, #ff5f7e, #ff2e63);
+        color: #fff;
+    }
+
+        button[data-action="add"]:hover,
+        button[data-action="subtract"]:hover,
+        button[data-action="multiply"]:hover,
+        button[data-action="divide"]:hover,
+        button[data-action="root"]:hover,
+        button[data-action="power"]:hover {
+            background-color: #ff4976;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+    /* 括号按钮 */
+    button[data-action="openParen"],
+    button[data-action="closeParen"] {
+        background: linear-gradient(145deg, #17e9e0, #33cccc);
+        color: #fff;
+    }
+
+        button[data-action="openParen"]:hover,
+        button[data-action="closeParen"]:hover {
+            background-color: #22d8d3;
+        }
+
+    /* 等号按钮 */
+    button[data-action="equals"] {
+        background: linear-gradient(145deg, #4ade80, #22c55e);
+        color: #fff;
+        grid-column: span 2;
+        font-weight: bold;
+    }
+
+        button[data-action="equals"]:hover {
+            background-color: #34d399;
+        }
+
+    /* 清除和删除按钮 */
+    button[data-action="clear"],
+    button[data-action="delete"] {
+        background: linear-gradient(145deg, #facc15, #f59e0b);
+        color: #fff;
+    }
+
+        button[data-action="clear"]:hover,
+        button[data-action="delete"]:hover {
+            background-color: #fbbf24;
+        }
+
+/* 让按钮更加立体 */
+button {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2), inset 0 4px 6px rgba(255, 255, 255, 0.05);
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+    /* 更加现代的视觉按钮交互 */
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
