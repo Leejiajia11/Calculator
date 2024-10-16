@@ -53,7 +53,9 @@
 
 ## 截图
 
-![计算器截图](screenshot.png)
+![计算器截图](screenshot1.png)
+![计算器截图](screenshot2.png)
+![计算器截图](screenshot3.png)
 
 ## 许可
 
