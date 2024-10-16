@@ -115,7 +115,9 @@ This repository contains a simple web-based calculator built using **HTML**, **C
 
 ## Screenshots
 
-![Calculator Screenshot](screenshot.png)
+![Calculator Screenshot](screenshot1.png)
+![Calculator Screenshot](screenshot2.png)
+![Calculator Screenshot](screenshot3.png)
 
 ## License
 
